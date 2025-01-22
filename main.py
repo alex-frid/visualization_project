@@ -110,7 +110,7 @@ def visualization2(options):
 
     # Rename normalized columns for better readability in graphs
     normalized_columns_rename = {
-        'Previous qualification (grade) normalized': 'Previous qual.',
+        'Previous qualification (grade) normalized': 'Previous qual. grade',
         'Admission grade normalized': 'Admission grade ',
         'Curricular units 1st sem (grade)': '1st sem grade',
         'Curricular units 2nd sem (grade)': '2nd sem grade',
@@ -132,7 +132,6 @@ def visualization2(options):
         vis2[options],
         diag_kind='kde',
         # hue='Target',
-        palette=custom_palette,
         height=2.5
     )
     # Adding a title to the scatter plot matrix
@@ -311,7 +310,7 @@ if page == "Demographic Analysis of Dropout Rates":
 
 elif page == "Academic Performance and Prior Achievements":
     st.write("This matrix scatter plot visualizes relationships between prior achievements, academic performance, or both.")
-    options = st.multiselect("Choose Performances to Explore:",['Previous qual.', 'Admission grade ', '1st sem grade', '2nd sem grade'],['Previous qual.','Admission grade '])
+    options = st.multiselect("Choose Performances to Explore:",['Previous qual. grade', 'Admission grade ', '1st sem grade', '2nd sem grade'],['Previous qual. grade','Admission grade '])
 
     if len(options) < 2:
         st.warning("Please select at least two options.")
