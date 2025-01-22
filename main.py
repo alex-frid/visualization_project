@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 import seaborn as sns
-from matplotlib.pyplot import yticks
 from ucimlrepo import fetch_ucirepo
 import plotly.express as px
 import plotly.graph_objects as go
@@ -307,9 +306,11 @@ def visualization3(parent):
 
 if page == "Demographic Analysis of Dropout Rates":
     category = st.selectbox("Select a Demographic Feature:", ['Gender', 'Marital Status', 'Age at enrollment', 'Nationality'])
+    st.write("This chart highlights dropout rates across various demographic groups.")
     visualization1(category)
 
 elif page == "Academic Performance and Prior Achievements":
+    st.write("This matrix scatter plot visualizes relationships between prior achievements, academic performance, or both.")
     options = st.multiselect("Choose Performances to Explore:",['Previous qual.', 'Admission grade ', '1st sem grade', '2nd sem grade'],['Previous qual.','Admission grade '])
 
     if len(options) < 2:
@@ -318,5 +319,6 @@ elif page == "Academic Performance and Prior Achievements":
         visualization2(options)
 
 elif page == "Impact of Parental Education on Student Performance":
+    st.write("This grouped bar chart illustrates how parental education levels influence student success during their first and second semesters.")
     parent = st.radio("Select Parent:", ["Father's Education level", "Mother's Education level"])
     visualization3(parent)
