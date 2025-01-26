@@ -305,7 +305,12 @@ def visualization3(parent):
 
 if page == "Demographic Analysis of Dropout Rates":
     st.write("This chart highlights dropout rates across various demographic groups.")
-    category = st.selectbox("Select a Demographic Feature:", ['Gender', 'Marital Status', 'Age at enrollment', 'Nationality'])
+    col1, col2 = st.columns([1.5, 3])  # Adjust column width ratios
+    with col1:
+        category = st.selectbox("Select a Demographic Feature:",
+                                ['Gender', 'Marital Status', 'Age at enrollment', 'Nationality'])
+
+    visualization1(category)
     visualization1(category)
 
 elif page == "Academic Performance and Prior Achievements":
