@@ -311,7 +311,7 @@ if page == "Demographic Analysis of Dropout Rates":
                                 ['Gender', 'Marital Status', 'Age at enrollment', 'Nationality'])
 
     visualization1(category)
-    visualization1(category)
+
 
 elif page == "Academic Performance and Prior Achievements":
     st.write("This matrix scatter plot visualizes relationships between prior achievements, academic performance, or both.")
